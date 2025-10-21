@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <!-- Google Fonts -->
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com/"
+      crossorigin
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="relative flex min-h-screen flex-col bg-white overflow-x-hidden">
+      <div class="flex h-full grow flex-col">
+        <div class="px-4 md:px-40 flex flex-1 justify-center py-5">
+          <div class="flex flex-col max-w-[960px] flex-1">
+            <h2
+              class="text-[#181111] text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5"
+            >
+              Weather Conditions
+            </h2>
+
+            <!-- Weather Card -->
+            <div class="flex flex-wrap gap-4 px-4 py-6">
+              <div
+                class="flex min-w-72 flex-1 flex-col gap-2 rounded-xl border border-[#e5dcdc] p-6"
+              >
+                <p class="text-[#181111] text-base font-medium">Current Weather</p>
+                <input
+                  id="locationInput"
+                  type="search"
+                  placeholder="Search location"
+                  class="w-full rounded-md border border-[#e5dcdc] bg-white px-3 py-2 text-sm text-[#181111] placeholder:text-[#886364] focus:border-[#ea2a33] focus:outline-none focus:ring-1 focus:ring-[#ea2a33]"
+                />
+                <p
+                  id="temperature"
+                  class="text-[#181111] text-[32px] font-bold leading-tight truncate"
+                >
+                  --
+                </p>
+
+                <div class="flex gap-1">
+                  <p class="text-[#886364] text-base">Temperature</p>
+                  <p id="tempChange" class="text-[#07885d] text-base font-medium">
+                    --
+                  </p>
+                </div>
+
+                <!-- Stats -->
+                <div
+                  class="grid min-h-[180px] gap-x-4 gap-y-6 grid-cols-[auto_1fr] items-center py-3"
+                >
+                  <p class="label">Temperature</p>
+                  <div class="h-full flex-1">
+                    <div id="tempBar" class="bar"></div>
+                  </div>
+
+                  <p class="label">Humidity</p>
+                  <div class="h-full flex-1">
+                    <div id="humidityBar" class="bar"></div>
+                  </div>
+
+                  <p class="label">Wind Speed</p>
+                  <div class="h-full flex-1">
+                    <div id="windBar" class="bar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex justify-between gap-2 px-4 py-3">
+              <div class="flex gap-2">
+                <button class="p-2 text-[#181111]" id="toggleBtn">⚙️</button>
+                <button class="p-2 text-[#181111]" id="globeBtn">🌍</button>
+              </div>
+
+              <button
+                id="unitBtn"
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 bg-[#ea2a33] text-white gap-2 text-sm font-bold min-w-0 px-4"
+              >
+                <span class="truncate">Units: °C</span>
+              </button>
+            </div>
+
+            <!-- Last Updated -->
+            <p
+              id="lastUpdated"
+              class="text-[#886364] text-sm text-center pb-3 pt-1 px-4"
+            >
+              Last updated: --
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
