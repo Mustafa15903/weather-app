@@ -1,5 +1,3 @@
-const apiKey = "b661a39aa570e8db3d43709e1ba7a12a"; // <-- put your OpenWeatherMap API key here
-let units = "metric"; // default Celsius
 
 async function fetchWeather(location) {
   try {
